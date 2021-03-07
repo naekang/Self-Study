@@ -18,7 +18,7 @@
   |0|1|2|3|
   |--|--|--|--|
   |javascript|node.js|55|hello|
-  -> a[0] = javascript, a[1] = node.js, a[2] = 55, a[3] = hello
+  |a[0]|a[1]|a[2]|a[3]|
 - a.length = 4 -> 배열의 길이
 - a.indexOf('node.js') = 2 -> 몇번째 배열인지
 
