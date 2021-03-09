@@ -135,3 +135,89 @@ if (a < 10) {
 }
 ```
 2. switch문
+```javascript
+switch("yellow") {
+    case "blue" :
+        console.log("파란색입니다.");
+        break;
+    case "green" :
+        console.log("초록색입니다.");
+        break;
+    default :
+        console.log("모든 조건을 벗어남");
+}
+```
+
+## 자바스크립트 콜백 함수
+- 콜백함수(Callback Function) : parameter형식으로 함수를 전달받아 함수 내부에서 실행하는 함수
+```javascript
+function add(a, b, callback) {
+    callback(a+b);
+}
+function result(value) {
+    console.log(value);
+}
+
+add(3, 5, result);
+``` 
+```javascript
+function test(num, callback) {
+    console.log(num);
+    callback();
+}
+
+test(1, function() {
+    console.log("콜백함수가 실행됩니다.");
+});
+
+// 1
+// 콜백함수가 실행됩니다.
+```
+
+## 자바스크립트 클로저
+- 내부함수가 외부함수의 맥락에 접근할 수 있음
+- 내부함수는 외부함수의 지경변수에 접근할 수 있음
+```javascript
+function outter() {
+    var title = "javascript"; // 외부함수 outter()의 지역변수
+
+    function inner() { // 내부함수 inner()
+        console.log(title);
+    }
+    inner();
+}
+outter();
+// 실행결과 : javascript
+```
+```javascript
+function ex_cl() {
+    var num = 0;
+
+    return function() {
+        num++;
+        console.log(num);
+    }
+}
+
+var test = ex_cl();
+test(); // return을 함수로 줬기 때문에 ()사용
+test();
+```
+
+## Front-End에서의 자바스크립트
+```html
+<div id="num"></div>
+<button id="plus">increment</button>
+
+<script>
+    var num = 1;
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('#num').innerHTML = num;
+    })
+    document.querySelector('#plus').addEventListener('click', funtion() {
+        num++;
+        document.querySelector('#num').innerHTML = num;
+    })
+</script>
+
+```
