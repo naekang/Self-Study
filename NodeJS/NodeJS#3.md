@@ -147,6 +147,11 @@ app.use("/public", express.static("public"));
     })
     ```
 
+## express 권장 구조
+- controllers/index: 대분류 url + 폴더 위치
+- controllers/admin/index.js: admin url + 미들웨어
+- controllers/admin/admin.ctrl.js: 컨트롤러 역할
+
 ## url추가 없이 메서드만 변경해서 작업 처리
 1. GET /users -> 사용자 정보
 2. POST /users -> 사용자 추가
