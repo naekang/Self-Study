@@ -8,5 +8,5 @@
     2. 내가 원하는 부분을 가져온다.
 
 - 사용 모듈
-    1. request
-    2. cheerio
+    1. request : url로 호출 후 데이터를 가져옴
+    2. cheerio : jQuery 방식으로 DOM을 가져와 데이터 정제

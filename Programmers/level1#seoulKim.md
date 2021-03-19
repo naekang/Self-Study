@@ -31,6 +31,6 @@ function solution(seoul) {
 ```javascript
 function solution(seoul) {
     var index = seoul.indexOf('Kim');
-    return `김서방은 ${index}에 있다`;
+    return `김서방은 ${index}에 있다`; // ES6이후 도입된 방법
 }
 ```
