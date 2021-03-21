@@ -52,4 +52,103 @@ console.log(result);
 
 - 단순한 조건문일 경우는 삼항 연산자를 사용해도 되지만 복잡할 경우는 if ... else문을 사용하도록
 
-### 8.2.2 switch 문
+### 8.2.2 switch 
+```
+switch (표현식) {
+    case 표현식1 :
+        switch 문의 표현식과 표현식1이 일치하면 실행될 문;
+        break;
+    case 표현식2 :
+        switch 문의 표현식과 표현식2가 일치하면 실행될 문;
+        break;
+    default :
+        switch 문의 표현식과 일치하는 case문이 없을 떄 실행될 문;
+}
+```
+- break문을 사용하지 않을 경우 마지막 default까지 실행됨 -> 폴스루(fall through)
+- default 문에서는 break문을 생략하는 것이 일반적임
+- if ... else문을 사용할 수 있으면 사용하는 것이 좋음
+
+## 8.3 반복문(Loop Statement)
+- for 문, while 문, do ... while 문
+- 반복문을 대체하기 위한 메서드들도 존재
+    - forEach 메서드, for ... in 문, for ... of 문
+
+### 8.3.1 for 문
+```
+for (변수 선언문 또는 할당문; 조건식; 증감식) {
+    조건식이 참일 경우 반복 실행될 문;
+}
+```
+- for 문을 중첩해서 사용가능
+
+### 8.3.2 while 문
+- 주어진 조건식의 결과가 참이면 반복실행
+
+```javascript
+var count = 0;
+
+while (true) {
+    console.log(count);
+    count++;
+    // count값이 3이면 탈출
+    if (count === 3)
+        break;
+}
+```
+
+### 8.3.3 do ... while 문
+- 코드블록 먼저 실행 후 조건식 평가
+```javascript
+var count = 0;
+
+do {
+    console.log(count);
+    count++;
+} while (count < 3);
+```
+
+## 8.4 break문
+- 코드 블록 탈출
+- 반복문 이외에서 break문을 쓰면 문법 에러 발생
+- 문자열에서 특정 문자의 인덱스 검색 예시
+    ```javascript
+    var string = 'Hello World';
+    var search = 'l';
+    var index;
+
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === search) {
+            index = i;
+            break;
+        }
+    }
+    console.log(index); // 2
+    console.log(string.indexOf(search)); // 2
+    ```
+
+## 8.5 continue 문
+- 반복문의 코드블록을 현 지점에서 중단하고 증감식으로 이동시킴
+- if문 내에서 실행해야 할 코드가 길면 continue를 사용하는 편이 가독성에 좋음
+```javascript
+// continue 문을 사용하지 않으면 if문 내에 코드를 작성해야함
+for (var i = 0; i < string.length; i++) {
+    // 'l'이면 카운트 증가
+    if (string[i] === search) {
+        count++;
+        // code
+        // code
+    }
+}
+
+// continue문을 사용하면 if문 밖에 코드 작성 가능
+for (var i = 0; i < string.length; i++) {
+    // 'l'이면 카운트 증가
+    if (string[i] === search) continue;
+    
+    count++;
+    // code
+    // code
+
+}
+```
