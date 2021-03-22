@@ -149,6 +149,5 @@ for (var i = 0; i < string.length; i++) {
     count++;
     // code
     // code
-
 }
 ```
