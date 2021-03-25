@@ -63,3 +63,73 @@ score = 100;
 console.log(score, copy); // 100 80
 ```
 - `값에 의한 전달`도 사실은 값을 전달하는 것이 아니라 메모리 주소를 전달한다. 단, 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.
+
+## 11.2 객체
+- 객체는 프로퍼티의 개수가 정해져 있지 않고 동적으로 추가, 삭제가 가능하기 때문에 원시 값처럼 메모리 공간의 크기를 사전에 정해둘 수 없음
+- 자바스크립트 객체의 관리 방식
+    - 프로퍼티 키를 인덱스로 사용하는 해시 테이블
+    - 클래스 없이 객체를 생성할 수 있으며 동적으로 프로퍼티와 메서드의 추가가 가능함
+    - 사용은 편리하나 성능 면에서는 클래스 기반 언어의 객체보다 생성과 프로퍼티 접근에 비용이 더 많이 드는 비효율적인 방식임
+    - 따라서, V8자바스크립트 엔진은 동적 탐색 대신 히든 클래스 방식 ㅏㅅ용
+
+
+### 11.2.1 변경 가능한 값
+- 객체 타입의 값, 즉 객체는 변경 가능한 값
+- 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근 가능
+- 재할당 없이 프로퍼티를 동적으로 추가할 수 있고 프로퍼티 값 갱신도 가능하며 프로퍼티 자체를 삭제할 수 있다.
+    ```javascript
+    var person = {
+        name: 'Lee'
+    };
+
+    // 프로퍼티 값 갱신
+    person.name = 'Kim';
+
+    // 프로퍼티 동적 생성
+    person.address = 'Seoul';
+
+    console.log(person); // {name: "Kim", address: "Seoul"}
+    ```
+
+- 얕은 복사 vs 깊은 복사
+    - 객체를 프로퍼티 값으로 갖는 객체의 경우 얕은 복사는 한 단계까지만 복사하는 것을 말하고 깊은 복사는 객체에 중첩되어 있는 객체까지 모두 복사하는 것
+    ```javascript
+    const o = { x: { y: 1 } };
+
+    // 얕은 복사
+    const c1 = { ...o };
+    console.log(c1 === o); // false
+    console.log(c1.x === o.x); // true
+
+    // lodash의 cloneDeeop을 사용한 깊은 복사
+    // "npm install lodash"로 lodash를 설치한 후, Node.js 환경에서 실행
+    const _ = require('lodash');
+    // 깊은 복사
+    const c2 = _.cloneDeep(o);
+    console.log(c2 == o); // false
+    console.log(c2.x === o.x); // false
+    ```
+
+### 11.2.2 참조에 의한 전달
+```javascript
+var person = {
+    name: 'Lee'
+};
+
+// 참조 값을 복사(얕은 복사). copy와 person은 동일한 참조 값을 갖는다.
+var copy = person;
+
+// copy와 person은 동일한 객체를 참조
+console.log(copy === person); // true
+
+// copy를 통해 객체 변경
+copy.name = 'Kim';
+
+// person을 통해 객체 변경
+person.address = 'Seoul';
+// copy와 person은 동일한 객체를 가리킴
+// 따라서 어느 한쪽에서 객체를 변경하면 서로 영향을 주고받음
+console.log(person); // {name: "Kim", address: "Seoul"}
+console.log(copy); // {name: "Kim", address: "Seoul"}
+```
+- `값에 의한 전달`과 `참조에 의한 전달`은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해서 전달한다는 면에 동일함
