@@ -22,18 +22,27 @@
     nums|result
     --|--
     [3,1,2,3]|2
-    [3,3,3,2,2]
+    [3,3,3,2,2,4]|3
+    [3,3,3,2,2,2]|2
 
 4. 내가 푼 코드
-- 자바스크립트에서 연,월,일을 받아 날짜를 출력하는 Data 메서드 사용
-- 가장 앞에 요일이 나오는 것을 이용해 문자열로 변환후 앞 3자리 출력
+- 자바스크립트의 배열 중복 제거 방법 중 한가지인 Set 객체를 이용하는 방법을 사용하였다.
+- 최대 결과값인 N/2를 지정해두고 비교하여 결과값을 출력한다.
 ```javascript
-function solution(a, b) {
-    // 2016년 a월 b일의 날짜 출력
-    var date = new Date(2016, (a-1), b);
-    // 문자열로 변환 후 앞 세자리 출력
-    var day = date.toString().substring(0, 3);
-    // 대문자로 변환
-    return day.toUpperCase();
+function solution(nums) {
+    // 중복값이 있는 배열을 Set 객체로 만들어 중복 제거
+    var set = new Set(nums);
+    console.log(set);
+    // Set객체를 다시 배열로 변환
+    var uniqueArr = [...set];
+    // 가장 큰 폰켓몬 결과값을 maxReturn 으로 지정
+    var maxReturn = nums.length / 2;
+    
+    // max값을 넘기면 max값 그대로 출력
+    // max값 보다 작으면 원래 배열에서 중복값 제거한 값의 절반을 출력
+    if (maxReturn >= uniqueArr.length)
+        return uniqueArr.length;
+    else
+        return maxReturn;
 }
 ```
