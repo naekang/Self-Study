@@ -143,7 +143,7 @@
 
 ## **1.4 전형적인 함수들의 증가율**
 
-[https://velog.io/@qksud14/Algorithm-BigO](빅오 표기법에 대해 잘 정리해주신 분의 블로그 참조)
+[https://velog.io/@qksud14/Algorithm-BigO](빅오 표기법에 대해 잘 정리해주신 분의 블로그 참조).
 
 
 
@@ -151,4 +151,4 @@
 
 참고 서적 : 국형준, 알고리즘 원리와 응용, 21세기사
 
-[www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LAG&Kc=](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LAG&Kc=)
+[www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LAG&Kc=](교보문고 링크 참조).
