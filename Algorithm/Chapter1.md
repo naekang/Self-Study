@@ -152,15 +152,3 @@
 참고 서적 : 국형준, 알고리즘 원리와 응용, 21세기사
 
 [www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LAG&Kc=](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LAG&Kc=)
-
-[
-
-알고리즘 원리와 응용 - 교보문고
-
-국내 교재의 경우 빠르게 변화하는 선진적인 추세에 미처 따르기 못해 최신의 진전된 내용을 전달하는데 한계가 있다. 번역판의 경우 대부분 번역체 문장의 한계로 인해 내용전달이 부자연스럽
-
-www.kyobobook.co.kr
-
-
-
-](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LAG&Kc=)
