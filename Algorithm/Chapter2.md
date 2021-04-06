@@ -48,7 +48,6 @@ Alg printDigits()                   {driver}
         write("Negative number!")
     else
         rPrintDigits(n)             {initial call}
-
 Alg rPrintDigits(n)                 {recursive}
 1.  if (n < 10)                     {base case}
         write(n)
