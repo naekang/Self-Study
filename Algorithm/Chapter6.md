@@ -133,3 +133,37 @@ else
 --|--|--|--|--|--
 연결|O(1)|O(log n)|O(1)|O(log n)|O(n)
 순차|O(1)|O(log n)|O(1)|O(1)|O(n)
+
+
+## **6.4 힙 정렬**
+- 힙은 우선순위 큐를 구현한 형태이므로 정렬에 응용 가능
+- O(n log n)으로 선택정렬 또는 삽입정렬과 같은 O(n^2) 시간 알고리즘 보다 빠름
+
+
+```
+Alg heapSort(L)
+    input list L
+    output sorted list L
+
+1. H <- empty heap
+2. while (!L.isEmpty())
+    k <- L.removeFirst()
+    H.insertItem(k)
+3. while (!H.isEmpty())
+    k <- H.removeMin()
+    L.addLast(k)
+4. return 
+```
+
+
+## **6.5 제자리 힙 정렬**
+- heapSort의 공간 사용을 줄일 수 있음
+- 최소힙 대신 최대힙 사용
+
+
+## **6.6 상향식 힙생성**
+- 힙에 저장되어야 할 모든 키들이 미리 주어지면 O(n)시간에 수행
+
+
+
+참고 문헌 : [국형준, 알고리즘 원리와 응용, 21세기사](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788984688100&orderClick=LET&Kc=)
