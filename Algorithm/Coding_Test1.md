@@ -270,11 +270,4 @@ print(result)
 ```
 
 
-
-
-
-
-
-
-
 - 참고한 책: [이것이 취업을 위한 코딩테스트다 with 파이썬](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791162243077&orderClick=LEa&Kc=)
