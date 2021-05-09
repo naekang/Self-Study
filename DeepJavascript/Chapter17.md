@@ -179,3 +179,71 @@ const obj = {
 
 new obj.x(); // TypeError: obj.x is not a constructor
 ```
+
+```javascript
+function foo() {}
+
+// 일반 함수로서 호출
+// [[call]] 호출. 모든 함수 객체는 [[call]]이 구현되어 있음
+foo();
+
+// 생성자 함수로서 호출
+// [[Construct]] 호출. 이때 [[Construct]]를 갖지 않으면 에러 발생
+new foo();
+```
+
+
+### 17.2.6 new 연산자
+- new 연산자와 함께 함수를 호출하면 생성자 함수로 동작. 즉, [[Construct]] 호출
+    ```javascript
+    // 생성자 함수로서 정의하지 않은 일반 함수
+    function add(x, y) {
+        return x + y;
+    }
+
+    // 생성자 함수로서 정의하지 않은 일반 함수를 new 연산자와 함께 호출
+    let inst = new add();
+
+    // 함수가 객체를 반환하지 않았으므로 반환문이 무시됨. 따라서, 빈 객체가 생성되어 반환
+    console.log(inst); // {}
+
+    // 객체를 반환하는 일반 함수
+    function createUser(name, role) {
+        return { name, role }; 
+    }
+
+    // 일반 함수를 new 연산자와 함께 호출
+    inst = new createUser('Lee', 'admin');
+    // 함수가 생성한 객체를 반환
+    console.log(inst); // {name: "Lee", role: "admin"}
+    ```
+
+- new 연산자가 없이 함수를 호출하면 일반 함수로 호출. 즉, [[call]] 호출
+    ```javascript
+    // 생성자 함수
+    function Circle(radius) {
+        this.radius = radius;
+        this.getDiameter = function () {
+            return 2 * this.radius;
+        };
+    }
+
+    // new 연산자 없이 생성자 함수를 호출하면 일반 함수로서 호출
+    const circle = Circle(5);
+    console.log(circle); // undefined
+    
+    // 일반 함수 내부의 this는 전역 객체 window를 가리킴
+    console.log(radius); // 5
+    console.log(getDiameter()); // 10
+
+    circle.getDiameter();
+    // TypeError: Cannot read property 'getDiameter' of undefined
+    ```
+
+
+### 17.2.7 new.target
+- this와 유사하게 constructor인 모든 함수 내부에서 암묵적인 지역변수와 함께 생성
+- new 연산자와 함께 생성자 함수로서 호출되면 함수 내부의 new.target은 함수 자신을 가리킴. new 연산자 없이 일반 함수로서 호출된 함수 내부의 new.target은 undefined
+
+- Object와 Function 생성자 함수는 new 연산자 없어도 동일하게 동작
+- String, Number, Boolean 생성자 함수는 new가 있으면 객체 생성 반환 없으면 그대로 반환
