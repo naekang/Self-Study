@@ -52,3 +52,6 @@
     1단계로 '원인 분석'을 철저히 한 다음 2단계를 추진해야 함.
     이 시점에서 중요한 것은 '창의'가 아니라 '열정'임.
     ```
+
+
+참고문헌: [개발자의 글쓰기](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158391744&orderClick=LAG&Kc=#N)
