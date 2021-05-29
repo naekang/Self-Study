@@ -71,3 +71,6 @@ static final int COFFEE_MAX = 10;
     .form__button {}
     .form__button--disabled {}
     ```
+
+## 가독성과 소통이 먼저다
+- 프로그램 개발하기 전 관련 개발자들끼리 기본적인 컨벤션 규칙을 정하는 것이 우선
