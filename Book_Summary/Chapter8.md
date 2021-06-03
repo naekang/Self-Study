@@ -16,3 +16,22 @@
 
 ## 주석의 발췌와 요약
 - 중요한 부분을 뽑으려면 덜 중요한 것을 빼야함
+- 예시
+    ```java
+    // 사용자가 레벨업하려면 로그인을 10회 이상하고 게시물을 5개 이상 작성해야 한다.
+    if(user.getLoginCount() >= 10 && user.getOwnArticleCount() >= 5) {
+        int level = user.getLevel();
+        user.setLevel(level++);
+    } 
+    ```
+    - 승급 조건과 승급의 상위 개념을 사용하여 주석을 간단하게 나타내는 방법도 가능
+    - 리팩토링을 통해 주석 없애기
+    ```java
+    if(user.enoughToLevelUp()) {
+        user.levelup();
+    }
+    ```
+
+## 주석도 코드다
+- 급하게 코드를 수정하다보면 주석에 오류가 생기는 경우가 발생할 수 있음
+- 주석도 코드라고 생각하며 코드 리뷰시 꼼꼼하게 살피기
